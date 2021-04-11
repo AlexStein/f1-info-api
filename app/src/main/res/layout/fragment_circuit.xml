@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/track_name_placeholder"
+        android:textAlignment="center"
+        android:textFontWeight="800"
+        android:textSize="@dimen/title_font_size" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_weight="1"
+        tools:srcCompat="@tools:sample/backgrounds/scenic"
+        android:contentDescription="@string/circuit_map" />
+
+    <TextView
+        android:id="@+id/textViewCountry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/country_placeholder"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/stat_font_size" />
+
+    <TextView
+        android:id="@+id/textViewCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="City"
+        android:textAlignment="textEnd"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textViewLength"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="4000m"
+        android:textAlignment="textEnd"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textViewOpened"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="01.01.1970"
+        android:textAlignment="textEnd"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textViewCapacity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="50000"
+        android:textAlignment="textEnd"
+        android:textSize="18sp" />
+
+
+</LinearLayout>

@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">F1InfoAPI</string>
+    <string name="track_name_placeholder">Track Name</string>
+    <string name="country_placeholder">Country</string>
+    <string name="button_circuits">Circuits</string>
+    <string name="button_teams">Teams</string>
+    <string name="button_seasons">Seasons</string>
+    <string name="app_title">F1 Info API</string>
+    <string name="circuit_map">Circuit map</string>
 </resources>

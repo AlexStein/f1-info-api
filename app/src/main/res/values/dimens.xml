@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="title_font_size">36sp</dimen>
+    <dimen name="stat_font_size">18sp</dimen>
+    <dimen name="title_size">64dp</dimen>
+    <dimen name="button_margin">32dp</dimen>
+    <dimen name="main_button_size">96dp</dimen>
+    <dimen name="list_name_text_size">18sp</dimen>
+    <dimen name="margin">8dp</dimen>
+    <dimen name="item_image_size">48dp</dimen>
+</resources>
