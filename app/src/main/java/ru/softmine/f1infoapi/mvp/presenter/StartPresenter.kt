@@ -4,7 +4,6 @@ import com.github.terrakok.cicerone.Router
 import moxy.InjectViewState
 import moxy.MvpPresenter
 import ru.softmine.f1infoapi.mvp.navigation.IScreens
-import ru.softmine.f1infoapi.mvp.view.MainView
 import ru.softmine.f1infoapi.mvp.view.StartView
 import javax.inject.Inject
 
@@ -25,13 +24,13 @@ class StartPresenter: MvpPresenter<StartView>() {
         router.navigateTo(screens.circuits())
     }
 
-//    fun onSeasonsClicked() {
-//        router.navigateTo(screens.seasons())
-//    }
-//
-//    fun onTeamsClicked() {
-//        router.navigateTo(screens.teams())
-//    }
+    fun onSeasonsClicked() {
+        router.navigateTo(screens.seasons())
+    }
+
+    fun onTeamsClicked() {
+        router.navigateTo(screens.teams())
+    }
 
     fun backClicked() {
         router.exit()

@@ -8,7 +8,8 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
-import ru.softmine.f1infoapi.mvp.model.image.ImageLoader
+import ru.softmine.f1infoapi.R
+import ru.softmine.f1infoapi.mvp.model.images.ImageLoader
 import ru.softmine.f1infoapi.mvp.model.network.NetworkStatus
 import ru.softmine.f1infoapi.mvp.model.repository.interfaces.ImageCache
 import java.io.ByteArrayOutputStream
@@ -29,6 +30,7 @@ class GlideImageLoader(
                     Glide.with(container.context)
                         .asBitmap()
                         .load(url)
+                        .timeout(60000)
                         .listener(object : RequestListener<Bitmap> {
                             override fun onLoadFailed(
                                 e: GlideException?,

@@ -8,4 +8,5 @@ import kotlinx.parcelize.Parcelize
 data class Competition(
     @Expose val id: String,
     @Expose val name: String,
+    @Expose val location: Location
 ) : Parcelable

@@ -8,4 +8,6 @@
     <dimen name="list_name_text_size">18sp</dimen>
     <dimen name="margin">8dp</dimen>
     <dimen name="item_image_size">48dp</dimen>
+    <dimen name="list_season_text_size">48sp</dimen>
+    <dimen name="list_paddings">4dp</dimen>
 </resources>

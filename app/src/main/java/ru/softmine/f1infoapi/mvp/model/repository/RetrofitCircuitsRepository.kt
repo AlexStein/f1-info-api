@@ -1,5 +1,6 @@
 package ru.softmine.f1infoapi.mvp.model.repository
 
+import android.util.Log
 import io.reactivex.rxjava3.core.Single
 import io.reactivex.rxjava3.schedulers.Schedulers
 import ru.softmine.f1infoapi.mvp.model.api.DataSource
@@ -17,7 +18,11 @@ class RetrofitCircuitsRepository (
         override fun getCircuits(): Single<List<Circuit>> =
             networkStatus.isOnlineSingle().flatMap { isOnline ->
                 if (isOnline) {
-                    api.getCircuits().flatMap { circuits ->
+                    api.getCircuits().flatMap { result ->
+                        Log.d("RetrofitCircuitsRepository", result.toString())
+                        val circuits = result.response.map { parcelable ->
+                            parcelable
+                        }
                         circuitsCache.putCircuits(circuits).andThen(Single.just(circuits))
                     }
                 } else {
@@ -28,7 +33,10 @@ class RetrofitCircuitsRepository (
     override fun getCircuit(id: Int): Single<Circuit> =
         networkStatus.isOnlineSingle().flatMap { isOnline ->
             if (isOnline) {
-                api.getCircuit(id).flatMap { circuit ->
+                api.getCircuit(id).flatMap { result ->
+                    val circuit = result.response.let {
+                        it[0]
+                    }
                     circuitsCache.putCircuits(listOf(circuit)).andThen(Single.just(circuit))
                 }
             } else {

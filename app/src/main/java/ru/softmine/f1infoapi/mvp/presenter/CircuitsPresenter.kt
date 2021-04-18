@@ -1,5 +1,6 @@
 package ru.softmine.f1infoapi.mvp.presenter
 
+import android.util.Log
 import com.github.terrakok.cicerone.Router
 import io.reactivex.rxjava3.core.Scheduler
 import moxy.InjectViewState
@@ -9,7 +10,7 @@ import ru.softmine.f1infoapi.mvp.model.repository.interfaces.CircuitsRepository
 import ru.softmine.f1infoapi.mvp.navigation.IScreens
 import ru.softmine.f1infoapi.mvp.presenter.interfaces.ListPresenter
 import ru.softmine.f1infoapi.mvp.view.CircuitsView
-import ru.softmine.f1infoapi.mvp.view.common.CircuitItemView
+import ru.softmine.f1infoapi.mvp.view.CircuitItemView
 import javax.inject.Inject
 import javax.inject.Named
 
@@ -50,6 +51,7 @@ class CircuitsPresenter: MvpPresenter<CircuitsView>() {
         circuitsRepo.getCircuits()
             .observeOn(uiScheduler)
             .subscribe({ repos ->
+                Log.d("CircuitsPresenter", repos.toString())
                 circuitsListPresenter.circuits.clear()
                 circuitsListPresenter.circuits.addAll(repos)
                 viewState.updateList()

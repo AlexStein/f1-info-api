@@ -6,7 +6,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Team(
-    @Expose val id: String,
+    @Expose val id: Int,
     @Expose val name: String,
     @Expose val logo: String,
     @Expose val president: String,

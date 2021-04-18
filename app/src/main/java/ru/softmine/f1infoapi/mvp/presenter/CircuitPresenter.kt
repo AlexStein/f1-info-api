@@ -14,6 +14,21 @@ class CircuitPresenter(private val circuit: Circuit): MvpPresenter<CircuitView>(
     @Inject lateinit var router: Router
     @Inject lateinit var screens: IScreens
 
+    override fun onFirstViewAttach() {
+        super.onFirstViewAttach()
+        viewState.init()
+
+        viewState.setName(circuit.name)
+        // viewState.setCountry(circuit.country ?: "")
+        // viewState.setCity(circuit.city ?: "")
+        viewState.loadImage(circuit.image)
+        viewState.setLength(circuit.length)
+        viewState.setOpenDate(circuit.opened)
+        viewState.setCapacity(circuit.capacity)
+        viewState.setOwner(circuit.owner)
+    }
+
+
     fun backClick(): Boolean {
         router.exit()
         return true

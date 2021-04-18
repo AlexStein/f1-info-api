@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
 import ru.softmine.f1infoapi.databinding.FragmentMainBinding
-import ru.softmine.f1infoapi.mvp.presenter.MainPresenter
 import ru.softmine.f1infoapi.mvp.presenter.StartPresenter
 import ru.softmine.f1infoapi.mvp.view.StartView
 import ru.softmine.f1infoapi.ui.App
@@ -43,7 +42,15 @@ class StartFragment : MvpAppCompatFragment(), StartView {
 
     override fun init() {
         vb?.buttonCircuits?.setOnClickListener {
-            presenter.onCircuitsClicked();
+            presenter.onCircuitsClicked()
+        }
+
+        vb?.buttonSeasons?.setOnClickListener {
+            presenter.onSeasonsClicked()
+        }
+
+        vb?.buttonTeams?.setOnClickListener {
+            presenter.onTeamsClicked()
         }
     }
 

@@ -3,7 +3,7 @@ package ru.softmine.f1infoapi.di.module
 import android.widget.ImageView
 import dagger.Module
 import dagger.Provides
-import ru.softmine.f1infoapi.mvp.model.image.ImageLoader
+import ru.softmine.f1infoapi.mvp.model.images.ImageLoader
 import ru.softmine.f1infoapi.mvp.model.network.NetworkStatus
 import ru.softmine.f1infoapi.mvp.model.repository.interfaces.ImageCache
 import ru.softmine.f1infoapi.ui.App

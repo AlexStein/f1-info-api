@@ -12,5 +12,5 @@ data class Circuit(
     @Expose val length: String,
     @Expose val opened: Int,
     @Expose val capacity: Int,
-    @Expose val owner: String
+    @Expose val owner: String?
 ) : Parcelable

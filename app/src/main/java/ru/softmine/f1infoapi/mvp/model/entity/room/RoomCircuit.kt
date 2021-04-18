@@ -11,5 +11,5 @@ class RoomCircuit(
     val length: String,
     val opened: Int,
     val capacity: Int,
-    val owner: String
+    val owner: String?
 )

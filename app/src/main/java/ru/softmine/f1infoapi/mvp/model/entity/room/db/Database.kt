@@ -5,21 +5,28 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
-import ru.softmine.f1infoapi.mvp.model.entity.room.RoomCircuit
-import ru.softmine.f1infoapi.mvp.model.entity.room.RoomImage
-import ru.softmine.f1infoapi.mvp.model.entity.room.dao.CircuitDao
-import ru.softmine.f1infoapi.mvp.model.entity.room.dao.ImageDao
+import ru.softmine.f1infoapi.mvp.model.entity.room.*
+import ru.softmine.f1infoapi.mvp.model.entity.room.dao.*
 
 @androidx.room.Database(
     entities = [
-        RoomImage::class,
         RoomCircuit::class,
+        RoomCompetition::class,
+        RoomDriver::class,
+        RoomImage::class,
+        RoomRace::class,
+        RoomSeason::class,
+        RoomTeam::class,
     ],
-    version = 2
+    version = 3
 )
 abstract class Database : RoomDatabase() {
     abstract val circuitDao: CircuitDao
+    abstract val driverDao: DriverDao
     abstract val imageDao: ImageDao
+    abstract val raceDao: RaceDao
+    abstract val seasonDao: SeasonDao
+    abstract val teamDao: TeamDao
 
     companion object {
         const val DB_NAME = "f1api_database.db"
@@ -33,6 +40,7 @@ abstract class Database : RoomDatabase() {
             if (instance == null) {
                 instance = Room.databaseBuilder(context!!, Database::class.java, DB_NAME)
                     .addMigrations(MIGRATION_1_2)
+                    .addMigrations(MIGRATION_2_3)
                     .build()
             }
         }
@@ -41,6 +49,65 @@ abstract class Database : RoomDatabase() {
             override fun migrate(database: SupportSQLiteDatabase) {
                 database.execSQL(
                     "CREATE TABLE `RoomImage` (`url` TEXT PRIMARY KEY NOT NULL, `fileName` TEXT NOT NULL)"
+                )
+            }
+        }
+
+        private val MIGRATION_2_3 = object : Migration(2, 3) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.execSQL(
+                    """CREATE TABLE `RoomCompetition` (
+                        |`id` INTEGER PRIMARY KEY NOT NULL, 
+                        |`name` TEXT NOT NULL,
+                        |`location_country` TEXT NOT NULL,
+                        |`location_city` TEXT NOT NULL
+                        |)
+                    """.trimMargin()
+                )
+
+                database.execSQL(
+                    """CREATE TABLE `RoomDriver` (
+                        |`id` INTEGER PRIMARY KEY NOT NULL, 
+                        |`name` TEXT NOT NULL,
+                        |`image` TEXT NOT NULL,
+                        |`nationality` TEXT NOT NULL,
+                        |`birthdate` TEXT NOT NULL
+                        |)
+                    """.trimMargin()
+                )
+
+                database.execSQL(
+                    """CREATE TABLE `RoomRace` (
+                        |`id` INTEGER PRIMARY KEY NOT NULL, 
+                        |`circuitId` INTEGER NOT NULL,
+                        |`competitionId` INTEGER NOT NULL,
+                        |`date` TEXT NOT NULL,
+                        |`distance` INTEGER NOT NULL,
+                        |`laps` INTEGER NOT NULL,
+                        |`season` INTEGER NOT NULL,
+                        |`status` TEXT NOT NULL,
+                        |`type` TEXT NOT NULL,
+                        |`weather` TEXT NOT NULL,
+                        |)
+                    """.trimMargin()
+                )
+
+                database.execSQL(
+                    "CREATE TABLE `RoomSeason` (`id` INTEGER PRIMARY KEY NOT NULL)"
+                )
+
+                database.execSQL(
+                    """CREATE TABLE `RoomTeam` (
+                        |`id` INTEGER PRIMARY KEY NOT NULL, 
+                        |`name` TEXT NOT NULL,
+                        |`logo` TEXT NOT NULL,
+                        |`president` TEXT NOT NULL,
+                        |`director` TEXT NOT NULL,
+                        |`technical_manager` TEXT NOT NULL,
+                        |`engine` TEXT NOT NULL,
+                        |`tyres` TEXT NOT NULL,
+                        |)
+                    """.trimMargin()
                 )
             }
         }

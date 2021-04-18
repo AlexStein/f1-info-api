@@ -3,15 +3,17 @@ package ru.softmine.f1infoapi.ui.fragments
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
 import ru.softmine.f1infoapi.databinding.FragmentCircuitBinding
 import ru.softmine.f1infoapi.mvp.model.entity.Circuit
+import ru.softmine.f1infoapi.mvp.model.images.ImageLoader
 import ru.softmine.f1infoapi.mvp.presenter.CircuitPresenter
 import ru.softmine.f1infoapi.mvp.view.CircuitView
 import ru.softmine.f1infoapi.ui.App
 import ru.softmine.f1infoapi.ui.BackClickListener
-import java.util.*
+import javax.inject.Inject
 
 class CircuitFragment: MvpAppCompatFragment(), CircuitView, BackClickListener {
 
@@ -24,6 +26,8 @@ class CircuitFragment: MvpAppCompatFragment(), CircuitView, BackClickListener {
             }
         }
     }
+
+    @Inject lateinit var imageLoader: ImageLoader<ImageView>
 
     private val presenter: CircuitPresenter by moxyPresenter {
         val circuit = arguments?.getParcelable<Circuit>(CIRCUIT_ARG) as Circuit
@@ -47,21 +51,43 @@ class CircuitFragment: MvpAppCompatFragment(), CircuitView, BackClickListener {
         vb = null
     }
 
+    override fun init() {
+        App.instance.appComponent.inject(this)
+    }
+
     override fun backPressed() = presenter.backClick()
 
     override fun setName(text: String) {
-        TODO("Not yet implemented")
+        vb?.textViewName?.text = text
     }
 
-    override fun loadImage(text: String) {
-        TODO("Not yet implemented")
+    override fun loadImage(imageUrl: String) {
+        vb?.imageView?.let {
+            imageLoader.load(imageUrl, it)
+        }
     }
 
-    override fun setLength(len: Int) {
-        TODO("Not yet implemented")
+    override fun setCountry(text: String) {
+        vb?.textViewCountry?.text = text
     }
 
-    override fun setOpenDate(date: Date) {
-        TODO("Not yet implemented")
+    override fun setCity(text: String) {
+        vb?.textViewCity?.text = text
+    }
+
+    override fun setLength(len: String) {
+        vb?.textViewLength?.text = len
+    }
+
+    override fun setOpenDate(year: Int) {
+        vb?.textViewOpened?.text = year.toString()
+    }
+
+    override fun setCapacity(capacity: Int) {
+        vb?.textViewCapacity?.text = capacity.toString()
+    }
+
+    override fun setOwner(text: String?) {
+        vb?.textViewOwner?.text = text ?: ""
     }
 }
