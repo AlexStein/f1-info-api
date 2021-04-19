@@ -19,6 +19,14 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    buildTypes.each {
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file("apikeys.properties").newDataInputStream())
+        def RapidApiKey = properties.getProperty("rapidapi_key", "")
+        it.buildConfigField "String", "RAPIDAPI_KEY", RapidApiKey
+        it.buildConfigField "String", "RAPIDAPI_HOST", '"api-formula-1.p.rapidapi.com"'
+    }
+
     buildTypes {
         release {
             minifyEnabled false
