@@ -19,7 +19,7 @@ interface DataSource {
     fun getCircuit(@Path("id") id: Int): Single<ResponseObject<Circuit>>
 
     @GET("drivers/{id}")
-    fun getDriver(@Path("id") id: String): Single<ResponseObject<Driver>>
+    fun getDriver(@Path("id") id: Int): Single<ResponseObject<Driver>>
 
     @GET("rankings/drivers")
     fun getDriverRankings(@Query("season") season: Int): Single<ResponseObject<DriverRanking>>

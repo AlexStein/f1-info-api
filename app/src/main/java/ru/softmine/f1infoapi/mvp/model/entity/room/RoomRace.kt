@@ -11,13 +11,13 @@ import androidx.room.PrimaryKey
             entity = RoomCircuit::class,
             parentColumns = ["id"],
             childColumns = ["circuitId"],
-            onDelete = ForeignKey.CASCADE
+            onDelete = ForeignKey.NO_ACTION
         ),
         ForeignKey(
             entity = RoomCompetition::class,
             parentColumns = ["id"],
             childColumns = ["competitionId"],
-            onDelete = ForeignKey.CASCADE
+            onDelete = ForeignKey.NO_ACTION
         )
     ],
     indices = [

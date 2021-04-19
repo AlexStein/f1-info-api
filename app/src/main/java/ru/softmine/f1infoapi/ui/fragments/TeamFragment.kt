@@ -84,7 +84,6 @@ class TeamFragment: MvpAppCompatFragment(), TeamView, BackClickListener {
     }
 
     override fun setTyres(text: String) {
-        vb?.textViewTeamTires?.text = text
+        vb?.textViewTeamTyres?.text = text
     }
-
 }

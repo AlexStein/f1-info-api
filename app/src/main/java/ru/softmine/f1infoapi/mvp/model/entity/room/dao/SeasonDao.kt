@@ -10,22 +10,22 @@ import ru.softmine.f1infoapi.mvp.model.entity.room.RoomSeason
 @Dao
 interface SeasonDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(circuit: RoomSeason)
+    fun insert(season: RoomSeason)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(vararg circuits: RoomSeason)
+    fun insert(vararg seasons: RoomSeason)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(circuits: List<RoomSeason>)
+    fun insert(seasons: List<RoomSeason>)
 
     @Update
-    fun update(circuit: RoomSeason)
+    fun update(season: RoomSeason)
 
     @Update
-    fun update(vararg circuits: RoomSeason)
+    fun update(vararg seasons: RoomSeason)
 
     @Update
-    fun update(circuits: List<RoomSeason>)
+    fun update(seasons: List<RoomSeason>)
 
     @Query("SELECT * FROM RoomSeason")
     fun getAll(): List<RoomSeason>

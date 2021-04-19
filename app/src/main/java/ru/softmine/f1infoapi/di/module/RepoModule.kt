@@ -5,6 +5,7 @@ import dagger.Provides
 import ru.softmine.f1infoapi.mvp.model.api.DataSource
 import ru.softmine.f1infoapi.mvp.model.network.NetworkStatus
 import ru.softmine.f1infoapi.mvp.model.repository.RetrofitCircuitsRepository
+import ru.softmine.f1infoapi.mvp.model.repository.RetrofitDriversRepository
 import ru.softmine.f1infoapi.mvp.model.repository.RetrofitSeasonsRepository
 import ru.softmine.f1infoapi.mvp.model.repository.RetrofitTeamsRepository
 import ru.softmine.f1infoapi.mvp.model.repository.interfaces.*
@@ -22,11 +23,11 @@ class RepoModule {
 
     @Singleton
     @Provides
-    fun teamsRepo(
+    fun driversRepo(
         api: DataSource,
         networkStatus: NetworkStatus,
-        cache: TeamsCache
-    ): TeamsRepository = RetrofitTeamsRepository(api, networkStatus, cache)
+        cache: DriversCache
+    ): DriversRepository = RetrofitDriversRepository(api, networkStatus, cache)
 
     @Singleton
     @Provides
@@ -35,4 +36,12 @@ class RepoModule {
         networkStatus: NetworkStatus,
         cache: SeasonsCache
     ): SeasonsRepository = RetrofitSeasonsRepository(api, networkStatus, cache)
+
+    @Singleton
+    @Provides
+    fun teamsRepo(
+        api: DataSource,
+        networkStatus: NetworkStatus,
+        cache: TeamsCache
+    ): TeamsRepository = RetrofitTeamsRepository(api, networkStatus, cache)
 }

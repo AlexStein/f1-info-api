@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
-import ru.softmine.f1infoapi.databinding.FragmentCircuitsBinding
 import ru.softmine.f1infoapi.databinding.FragmentSeasonsBinding
 import ru.softmine.f1infoapi.mvp.presenter.SeasonsPresenter
 import ru.softmine.f1infoapi.mvp.view.SeasonsView

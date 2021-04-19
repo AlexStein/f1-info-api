@@ -10,22 +10,22 @@ import ru.softmine.f1infoapi.mvp.model.entity.room.RoomDriver
 @Dao
 interface DriverDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(circuit: RoomDriver)
+    fun insert(driver: RoomDriver)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(vararg circuits: RoomDriver)
+    fun insert(vararg drivers: RoomDriver)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(circuits: List<RoomDriver>)
+    fun insert(drivers: List<RoomDriver>)
 
     @Update
-    fun update(circuit: RoomDriver)
+    fun update(driver: RoomDriver)
 
     @Update
-    fun update(vararg circuits: RoomDriver)
+    fun update(vararg drivers: RoomDriver)
 
     @Update
-    fun update(circuits: List<RoomDriver>)
+    fun update(drivers: List<RoomDriver>)
 
     @Query("SELECT * FROM RoomDriver")
     fun getAll(): List<RoomDriver>

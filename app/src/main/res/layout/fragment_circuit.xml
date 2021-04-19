@@ -19,10 +19,18 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="@dimen/track_map_height"
         android:layout_weight="1"
         tools:srcCompat="@tools:sample/backgrounds/scenic"
         android:contentDescription="@string/circuit_map" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="@string/country_label"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/label_text_size" />
 
     <TextView
         android:id="@+id/textViewCountry"
@@ -34,6 +42,14 @@
         android:textSize="@dimen/stat_font_size" />
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="@string/city_label"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/label_text_size" />
+
+    <TextView
         android:id="@+id/textViewCity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,6 +57,14 @@
         android:text="@string/city_placeholder"
         android:textAlignment="textEnd"
         android:textSize="@dimen/stat_font_size" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="@string/track_length_label"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/label_text_size" />
 
     <TextView
         android:id="@+id/textViewLength"
@@ -52,6 +76,14 @@
         android:textSize="@dimen/stat_font_size" />
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="@string/track_opened_label"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/label_text_size" />
+
+    <TextView
         android:id="@+id/textViewOpened"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -61,6 +93,14 @@
         android:textSize="@dimen/stat_font_size" />
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="@string/track_capacity_label"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/label_text_size" />
+
+    <TextView
         android:id="@+id/textViewCapacity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -68,6 +108,14 @@
         android:text="@string/capacity_placeholder"
         android:textAlignment="textEnd"
         android:textSize="@dimen/stat_font_size" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="@string/track_owner_label"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/label_text_size" />
 
     <TextView
         android:id="@+id/textViewOwner"

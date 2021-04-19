@@ -10,6 +10,7 @@ import okhttp3.Request
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import ru.softmine.f1infoapi.BuildConfig
 import ru.softmine.f1infoapi.mvp.model.api.DataSource
 import ru.softmine.f1infoapi.mvp.model.network.NetworkStatus
 import ru.softmine.f1infoapi.ui.App
@@ -17,19 +18,19 @@ import ru.softmine.f1infoapi.ui.network.AndroidNetworkStatus
 import javax.inject.Named
 import javax.inject.Singleton
 
-const val API_HOST = "api-formula-1.p.rapidapi.com/"
-const val TOKEN = "e856b83819mshca25935d0f854cfp1deed4jsn303f8644248f"
+const val API_HOST = BuildConfig.RAPIDAPI_HOST
+const val API_TOKEN = BuildConfig.RAPIDAPI_KEY
 
 @Module
 class ApiModule {
 
     @Named("baseUrl")
     @Provides
-    fun baseUrl(): String = "https://$API_HOST"
+    fun baseUrl(): String = "https://$API_HOST/"
 
     private var client = OkHttpClient.Builder().addInterceptor { chain ->
         val newRequest: Request = chain.request().newBuilder()
-            .addHeader("x-rapidapi-key", TOKEN)
+            .addHeader("x-rapidapi-key", API_TOKEN)
             .addHeader("x-rapidapi-host", API_HOST)
             .build()
         chain.proceed(newRequest)

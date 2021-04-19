@@ -18,42 +18,88 @@
     <ImageView
         android:id="@+id/imageViewTeamLogo"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="@dimen/team_logo_height"
         android:contentDescription="@string/team_logo"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="@string/team_president_label"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/label_text_size" />
 
     <TextView
         android:id="@+id/textViewTeamPresident"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:textAlignment="textEnd"
         android:textSize="@dimen/list_name_text_size" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="@string/team_director_label"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/label_text_size" />
 
     <TextView
         android:id="@+id/textViewTeamDirector"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:textAlignment="textEnd"
         android:textSize="@dimen/list_name_text_size" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="@string/team_manager_label"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/label_text_size" />
 
     <TextView
         android:id="@+id/textViewTeamManager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:textAlignment="textEnd"
         android:textSize="@dimen/list_name_text_size" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="@string/team_engine_label"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/label_text_size" />
 
     <TextView
         android:id="@+id/textViewTeamEngine"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:textAlignment="textEnd"
         android:textSize="@dimen/list_name_text_size" />
 
     <TextView
-        android:id="@+id/textViewTeamTires"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="@string/team_tyres_label"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/label_text_size" />
+
+    <TextView
+        android:id="@+id/textViewTeamTyres"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:textAlignment="textEnd"
         android:textSize="@dimen/list_name_text_size" />
+
 </LinearLayout>

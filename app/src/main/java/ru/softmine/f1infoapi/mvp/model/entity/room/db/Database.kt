@@ -13,20 +13,24 @@ import ru.softmine.f1infoapi.mvp.model.entity.room.dao.*
         RoomCircuit::class,
         RoomCompetition::class,
         RoomDriver::class,
+        RoomDriverRanking::class,
         RoomImage::class,
         RoomRace::class,
         RoomSeason::class,
         RoomTeam::class,
+        RoomTeamRanking::class
     ],
-    version = 3
+    version = 4
 )
 abstract class Database : RoomDatabase() {
     abstract val circuitDao: CircuitDao
     abstract val driverDao: DriverDao
+    abstract val driverRankingDao: DriverRankingDao
     abstract val imageDao: ImageDao
     abstract val raceDao: RaceDao
     abstract val seasonDao: SeasonDao
     abstract val teamDao: TeamDao
+    abstract val teamRankingDao: TeamRankingDao
 
     companion object {
         const val DB_NAME = "f1api_database.db"
@@ -41,6 +45,7 @@ abstract class Database : RoomDatabase() {
                 instance = Room.databaseBuilder(context!!, Database::class.java, DB_NAME)
                     .addMigrations(MIGRATION_1_2)
                     .addMigrations(MIGRATION_2_3)
+                    .addMigrations(MIGRATION_3_4)
                     .build()
             }
         }
@@ -106,6 +111,35 @@ abstract class Database : RoomDatabase() {
                         |`technical_manager` TEXT NOT NULL,
                         |`engine` TEXT NOT NULL,
                         |`tyres` TEXT NOT NULL,
+                        |)
+                    """.trimMargin()
+                )
+            }
+        }
+
+        private val MIGRATION_3_4 = object : Migration(3, 4) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.execSQL(
+                    """CREATE TABLE `RoomDriverRanking` (
+                        |`id` INTEGER PRIMARY KEY NOT NULL, 
+                        |`driverId` INTEGER NOT NULL,
+                        |`teamId` INTEGER NOT NULL,
+                        |`seasonId` INTEGER NOT NULL,
+                        |`position` INTEGER NOT NULL DEFAULT 0,
+                        |`points` INTEGER NOT NULL DEFAULT 0,
+                        |`wins` INTEGER NOT NULL DEFAULT 0,
+                        |`behind` INTEGER NOT NULL DEFAULT 0
+                        |)
+                    """.trimMargin()
+                )
+
+                database.execSQL(
+                    """CREATE TABLE `RoomTeamRanking` (
+                        |`id` INTEGER PRIMARY KEY NOT NULL, 
+                        |`teamId` INTEGER NOT NULL,
+                        |`seasonId` INTEGER NOT NULL,
+                        |`position` INTEGER NOT NULL DEFAULT 0,
+                        |`points` INTEGER NOT NULL DEFAULT 0,
                         |)
                     """.trimMargin()
                 )

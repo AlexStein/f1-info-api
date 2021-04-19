@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="@dimen/list_paddings">
+
+    <TextView
+        android:id="@+id/textViewPosition"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/item_image_size"
+        android:layout_marginStart="@dimen/margin"
+        android:gravity="center_vertical"
+        android:textSize="@dimen/list_name_text_size" />
+
+    <ImageView
+        android:id="@+id/imageDriverPhoto"
+        android:layout_width="@dimen/item_image_size"
+        android:layout_height="@dimen/item_image_size"
+        android:layout_marginStart="@dimen/margin"
+        android:contentDescription="@string/driver_photo" />
+
+    <ImageView
+        android:id="@+id/imageTeamLogo"
+        android:layout_width="@dimen/item_image_size"
+        android:layout_height="@dimen/item_image_size"
+        android:layout_marginStart="@dimen/margin"
+        android:contentDescription="@string/circuit_map" />
+
+    <TextView
+        android:id="@+id/textViewTeamName"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/item_image_size"
+        android:layout_marginStart="@dimen/margin"
+        android:gravity="center_vertical"
+        android:textSize="@dimen/list_name_text_size" />
+
+    <TextView
+        android:id="@+id/textViewDriverName"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/item_image_size"
+        android:layout_marginStart="@dimen/margin"
+        android:gravity="center_vertical"
+        android:textSize="@dimen/list_name_text_size" />
+
+    <TextView
+        android:id="@+id/textViewPoints"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/item_image_size"
+        android:layout_marginStart="@dimen/margin"
+        android:gravity="center_vertical"
+        android:textSize="@dimen/list_name_text_size" />
+
+</LinearLayout>

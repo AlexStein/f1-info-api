@@ -39,7 +39,7 @@ class SeasonsPresenter : MvpPresenter<SeasonsView>() {
 
         seasonsListPresenter.itemClickListener = { view ->
             val season = seasonsListPresenter.seasons[view.pos]
-            //router.navigateTo(screens.rankings(season))
+            router.navigateTo(screens.season(season))
         }
     }
 
