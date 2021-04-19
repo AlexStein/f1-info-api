@@ -1,10 +1,6 @@
 package ru.softmine.f1infoapi.mvp.model.entity.room.dao
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 import ru.softmine.f1infoapi.mvp.model.entity.room.RoomTeam
 
 @Dao
@@ -13,7 +9,7 @@ interface TeamDao {
     fun insert(team: RoomTeam)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(vararg circuits: RoomTeam)
+    fun insert(vararg teams: RoomTeam)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(teams: List<RoomTeam>)
@@ -22,10 +18,10 @@ interface TeamDao {
     fun update(teams: RoomTeam)
 
     @Update
-    fun update(vararg circuits: RoomTeam)
+    fun update(vararg teams: RoomTeam)
 
     @Update
-    fun update(circuits: List<RoomTeam>)
+    fun update(teams: List<RoomTeam>)
 
     @Query("SELECT * FROM RoomTeam")
     fun getAll(): List<RoomTeam>

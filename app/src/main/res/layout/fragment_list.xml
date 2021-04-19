@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/screen_padding"
+    >
+
+    <TextView
+        android:id="@+id/textViewListTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/list_title_placeholder"
+        android:textAlignment="center"
+        android:textFontWeight="800"
+        android:textSize="@dimen/title_font_size" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textViewListTitle"
+        android:layout_marginTop="@dimen/margin" />
+
+</RelativeLayout>

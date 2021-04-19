@@ -10,22 +10,22 @@ import ru.softmine.f1infoapi.mvp.model.entity.room.RoomRace
 @Dao
 interface RaceDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(circuit: RoomRace)
+    fun insert(race: RoomRace)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(vararg circuits: RoomRace)
+    fun insert(vararg races: RoomRace)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(circuits: List<RoomRace>)
+    fun insert(races: List<RoomRace>)
 
     @Update
-    fun update(circuit: RoomRace)
+    fun update(race: RoomRace)
 
     @Update
-    fun update(vararg circuits: RoomRace)
+    fun update(vararg races: RoomRace)
 
     @Update
-    fun update(circuits: List<RoomRace>)
+    fun update(races: List<RoomRace>)
 
     @Query("SELECT * FROM RoomRace")
     fun getAll(): List<RoomRace>
