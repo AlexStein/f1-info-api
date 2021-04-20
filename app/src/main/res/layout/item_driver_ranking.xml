@@ -1,54 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/linearLayout"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="72dp"
     android:paddingVertical="@dimen/list_paddings">
 
     <TextView
         android:id="@+id/textViewPosition"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/item_image_size"
-        android:layout_marginStart="@dimen/margin"
+        android:layout_width="32dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:gravity="center_vertical"
-        android:textSize="@dimen/list_name_text_size" />
+        android:textColor="?attr/colorPrimaryDark"
+        android:textSize="@dimen/position_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageDriverPhoto"
-        android:layout_width="@dimen/item_image_size"
-        android:layout_height="@dimen/item_image_size"
-        android:layout_marginStart="@dimen/margin"
-        android:contentDescription="@string/driver_photo" />
+        android:layout_width="64dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/driver_photo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textViewPosition"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageTeamLogo"
-        android:layout_width="@dimen/item_image_size"
-        android:layout_height="@dimen/item_image_size"
-        android:layout_marginStart="@dimen/margin"
-        android:contentDescription="@string/circuit_map" />
-
-    <TextView
-        android:id="@+id/textViewTeamName"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/item_image_size"
-        android:layout_marginStart="@dimen/margin"
-        android:gravity="center_vertical"
-        android:textSize="@dimen/list_name_text_size" />
+        android:layout_width="126dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
+        android:contentDescription="@string/circuit_map"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageDriverPhoto"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewDriverName"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/item_image_size"
-        android:layout_marginStart="@dimen/margin"
+        android:layout_height="0dp"
         android:gravity="center_vertical"
-        android:textSize="@dimen/list_name_text_size" />
+        android:textSize="@dimen/list_name_text_size"
+        app:layout_constraintEnd_toStartOf="@+id/textViewPoints"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageDriverPhoto"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewTeamName"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:gravity="center_vertical"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textViewPoints"
+        app:layout_constraintStart_toEndOf="@id/imageTeamLogo" />
+
 
     <TextView
         android:id="@+id/textViewPoints"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/item_image_size"
-        android:layout_marginStart="@dimen/margin"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:gravity="center_vertical"
-        android:textSize="@dimen/list_name_text_size" />
+        android:textColor="#1B5E20"
+        android:textSize="@dimen/list_name_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

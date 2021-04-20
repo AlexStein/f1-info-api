@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/driver_name_placeholder"
+        android:textAlignment="center"
+        android:textFontWeight="800"
+        android:textSize="@dimen/title_font_size" />
+
+    <ImageView
+        android:id="@+id/imageViewPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/track_map_height"
+        android:layout_weight="1"
+        tools:srcCompat="@tools:sample/backgrounds/scenic"
+        android:contentDescription="@string/driver_photo" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text = "@string/nationality_label"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/label_text_size" />
+
+    <TextView
+        android:id="@+id/textViewNationality"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/country_placeholder"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/stat_font_size" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text = "@string/birthdate_label"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/label_text_size" />
+
+    <TextView
+        android:id="@+id/textViewBirthdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text ="@string/date_placeholder"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/stat_font_size" />
+
+</LinearLayout>

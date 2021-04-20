@@ -4,7 +4,7 @@ import io.reactivex.rxjava3.core.Completable
 import io.reactivex.rxjava3.core.Single
 import ru.softmine.f1infoapi.mvp.model.entity.room.RoomImage
 import ru.softmine.f1infoapi.mvp.model.entity.room.db.Database
-import ru.softmine.f1infoapi.mvp.model.repository.interfaces.ImageCache
+import ru.softmine.f1infoapi.mvp.model.repository.interfaces.cache.ImageCache
 import java.io.File
 import java.io.FileOutputStream
 import java.util.*

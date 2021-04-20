@@ -5,7 +5,7 @@ import io.reactivex.rxjava3.core.Single
 import ru.softmine.f1infoapi.mvp.model.entity.Season
 import ru.softmine.f1infoapi.mvp.model.entity.room.RoomSeason
 import ru.softmine.f1infoapi.mvp.model.entity.room.db.Database
-import ru.softmine.f1infoapi.mvp.model.repository.interfaces.SeasonsCache
+import ru.softmine.f1infoapi.mvp.model.repository.interfaces.cache.SeasonsCache
 
 class SeasonsCacheImpl(private val db: Database) : SeasonsCache {
 

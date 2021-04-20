@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.softmine.f1infoapi.databinding.ItemTeamBinding
 import ru.softmine.f1infoapi.mvp.model.images.ImageLoader
 import ru.softmine.f1infoapi.mvp.presenter.interfaces.ListPresenter
-import ru.softmine.f1infoapi.mvp.view.TeamItemView
+import ru.softmine.f1infoapi.mvp.view.teams.TeamItemView
 import javax.inject.Inject
 
 class TeamsAdapter(

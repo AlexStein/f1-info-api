@@ -5,7 +5,7 @@ import dagger.Module
 import dagger.Provides
 import ru.softmine.f1infoapi.mvp.model.images.ImageLoader
 import ru.softmine.f1infoapi.mvp.model.network.NetworkStatus
-import ru.softmine.f1infoapi.mvp.model.repository.interfaces.ImageCache
+import ru.softmine.f1infoapi.mvp.model.repository.interfaces.cache.ImageCache
 import ru.softmine.f1infoapi.ui.App
 import ru.softmine.f1infoapi.ui.image.GlideImageLoader
 import javax.inject.Named

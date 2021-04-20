@@ -32,7 +32,7 @@ class StartPresenter: MvpPresenter<StartView>() {
         router.navigateTo(screens.teams())
     }
 
-    fun backClicked() {
+    fun backClick() {
         router.exit()
     }
 

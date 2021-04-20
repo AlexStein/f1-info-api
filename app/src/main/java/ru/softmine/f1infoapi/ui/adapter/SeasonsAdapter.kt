@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ru.softmine.f1infoapi.databinding.ItemSeasonBinding
 import ru.softmine.f1infoapi.mvp.presenter.interfaces.ListPresenter
-import ru.softmine.f1infoapi.mvp.view.SeasonItemView
+import ru.softmine.f1infoapi.mvp.view.seasons.SeasonItemView
 
 class SeasonsAdapter(
     private val presenter: ListPresenter<SeasonItemView>

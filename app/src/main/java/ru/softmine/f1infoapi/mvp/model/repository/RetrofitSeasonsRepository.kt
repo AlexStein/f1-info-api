@@ -5,7 +5,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 import ru.softmine.f1infoapi.mvp.model.api.DataSource
 import ru.softmine.f1infoapi.mvp.model.entity.Season
 import ru.softmine.f1infoapi.mvp.model.network.NetworkStatus
-import ru.softmine.f1infoapi.mvp.model.repository.interfaces.SeasonsCache
+import ru.softmine.f1infoapi.mvp.model.repository.interfaces.cache.SeasonsCache
 import ru.softmine.f1infoapi.mvp.model.repository.interfaces.SeasonsRepository
 
 class RetrofitSeasonsRepository (

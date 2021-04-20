@@ -7,7 +7,7 @@ import ru.softmine.f1infoapi.mvp.model.entity.Driver
 import ru.softmine.f1infoapi.mvp.model.entity.DriverRanking
 import ru.softmine.f1infoapi.mvp.model.entity.Season
 import ru.softmine.f1infoapi.mvp.model.network.NetworkStatus
-import ru.softmine.f1infoapi.mvp.model.repository.interfaces.DriversCache
+import ru.softmine.f1infoapi.mvp.model.repository.interfaces.cache.DriversCache
 import ru.softmine.f1infoapi.mvp.model.repository.interfaces.DriversRepository
 
 class RetrofitDriversRepository (

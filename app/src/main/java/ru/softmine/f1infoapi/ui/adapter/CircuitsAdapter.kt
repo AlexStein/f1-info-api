@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.softmine.f1infoapi.databinding.ItemCircuitBinding
 import ru.softmine.f1infoapi.mvp.model.images.ImageLoader
 import ru.softmine.f1infoapi.mvp.presenter.interfaces.ListPresenter
-import ru.softmine.f1infoapi.mvp.view.CircuitItemView
+import ru.softmine.f1infoapi.mvp.view.circuits.CircuitItemView
 import javax.inject.Inject
 
 class CircuitsAdapter(

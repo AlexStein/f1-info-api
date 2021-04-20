@@ -9,6 +9,10 @@ import ru.softmine.f1infoapi.mvp.model.repository.RetrofitDriversRepository
 import ru.softmine.f1infoapi.mvp.model.repository.RetrofitSeasonsRepository
 import ru.softmine.f1infoapi.mvp.model.repository.RetrofitTeamsRepository
 import ru.softmine.f1infoapi.mvp.model.repository.interfaces.*
+import ru.softmine.f1infoapi.mvp.model.repository.interfaces.cache.CircuitsCache
+import ru.softmine.f1infoapi.mvp.model.repository.interfaces.cache.DriversCache
+import ru.softmine.f1infoapi.mvp.model.repository.interfaces.cache.SeasonsCache
+import ru.softmine.f1infoapi.mvp.model.repository.interfaces.cache.TeamsCache
 import javax.inject.Singleton
 
 @Module

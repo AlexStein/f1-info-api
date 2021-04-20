@@ -17,4 +17,5 @@
     <dimen name="big_title_font_size">48sp</dimen>
     <dimen name="screen_paddings">16dp</dimen>
     <dimen name="screen_padding">16dp</dimen>
+    <dimen name="position_text_size">24sp</dimen>
 </resources>

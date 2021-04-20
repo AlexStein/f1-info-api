@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingVertical="@dimen/list_paddings">
+
+    <ImageView
+        android:layout_width="@dimen/item_image_size"
+        android:layout_height="@dimen/item_image_size"
+        android:layout_gravity="center_vertical"
+        android:contentDescription="@string/flag_icon"
+        app:srcCompat="@drawable/ic_finish_flag" />
 
     <TextView
         android:id="@+id/textViewSeasonName"
