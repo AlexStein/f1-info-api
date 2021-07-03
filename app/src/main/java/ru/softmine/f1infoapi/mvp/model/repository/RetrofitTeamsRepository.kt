@@ -8,7 +8,7 @@ import ru.softmine.f1infoapi.mvp.model.entity.Season
 import ru.softmine.f1infoapi.mvp.model.entity.Team
 import ru.softmine.f1infoapi.mvp.model.entity.TeamRanking
 import ru.softmine.f1infoapi.mvp.model.network.NetworkStatus
-import ru.softmine.f1infoapi.mvp.model.repository.interfaces.TeamsCache
+import ru.softmine.f1infoapi.mvp.model.repository.interfaces.cache.TeamsCache
 import ru.softmine.f1infoapi.mvp.model.repository.interfaces.TeamsRepository
 
 class RetrofitTeamsRepository (

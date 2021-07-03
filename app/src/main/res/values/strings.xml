@@ -31,4 +31,14 @@
     <string name="list_title_placeholder">List</string>
     <string name="season_name">2020</string>
     <string name="driver_photo">Driver photo</string>
+    <string name="driver_name_placeholder">Driver Name</string>
+    <string name="nationality_label">Nationality</string>
+    <string name="birthdate_label">Birthdate</string>
+    <string name="driver_rankings">Drivers rankings</string>
+    <string name="seasons_title">Championship seasons</string>
+    <string name="teams_title">Full teams list</string>
+    <string name="circuits_title">Full circuits list</string>
+    <string name="flag_icon">Flag Icon</string>
+    <string name="not_available">n/a</string>
+    <string name="team_rankings">Team rankings</string>
 </resources>

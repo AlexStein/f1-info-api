@@ -20,7 +20,11 @@ import androidx.room.PrimaryKey
             onDelete = ForeignKey.NO_ACTION
         )
     ],
-    indices = [Index(value = ["teamId", "seasonId"], unique = true)]
+    indices = [
+        Index(value = ["teamId", "seasonId"], unique = true),
+        Index(value = ["teamId"]),
+        Index(value = ["seasonId"]),
+    ]
 )
 class RoomTeamRanking(
     var teamId: Int,

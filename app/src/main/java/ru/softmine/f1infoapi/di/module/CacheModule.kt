@@ -5,7 +5,7 @@ import dagger.Module
 import dagger.Provides
 import ru.softmine.f1infoapi.mvp.model.entity.room.db.Database
 import ru.softmine.f1infoapi.mvp.model.repository.cache.*
-import ru.softmine.f1infoapi.mvp.model.repository.interfaces.*
+import ru.softmine.f1infoapi.mvp.model.repository.interfaces.cache.*
 import ru.softmine.f1infoapi.ui.App
 import javax.inject.Singleton
 

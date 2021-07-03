@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.softmine.f1infoapi.databinding.ItemDriverRankingBinding
 import ru.softmine.f1infoapi.mvp.model.images.ImageLoader
 import ru.softmine.f1infoapi.mvp.presenter.interfaces.ListPresenter
-import ru.softmine.f1infoapi.mvp.view.DriverRankingItemView
+import ru.softmine.f1infoapi.mvp.view.drivers.DriverRankingItemView
 import javax.inject.Inject
 
 class DriverRankingsAdapter(

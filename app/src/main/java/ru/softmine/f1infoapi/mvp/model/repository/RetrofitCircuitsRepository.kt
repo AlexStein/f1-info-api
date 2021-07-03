@@ -6,7 +6,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 import ru.softmine.f1infoapi.mvp.model.api.DataSource
 import ru.softmine.f1infoapi.mvp.model.entity.Circuit
 import ru.softmine.f1infoapi.mvp.model.network.NetworkStatus
-import ru.softmine.f1infoapi.mvp.model.repository.interfaces.CircuitsCache
+import ru.softmine.f1infoapi.mvp.model.repository.interfaces.cache.CircuitsCache
 import ru.softmine.f1infoapi.mvp.model.repository.interfaces.CircuitsRepository
 
 class RetrofitCircuitsRepository (

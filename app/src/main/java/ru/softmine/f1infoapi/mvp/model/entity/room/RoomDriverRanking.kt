@@ -2,6 +2,7 @@ package ru.softmine.f1infoapi.mvp.model.entity.room
 
 import androidx.room.Entity
 import androidx.room.ForeignKey
+import androidx.room.Index
 import androidx.room.PrimaryKey
 
 @Entity(
@@ -25,7 +26,12 @@ import androidx.room.PrimaryKey
             onDelete = ForeignKey.NO_ACTION
         )
     ],
-    indices = [androidx.room.Index(value = ["driverId", "teamId", "seasonId"], unique = true)]
+    indices = [
+        Index(value = ["driverId", "teamId", "seasonId"], unique = true),
+        Index(value = ["driverId"]),
+        Index(value = ["teamId"]),
+        Index(value = ["seasonId"]),
+    ]
 )
 class RoomDriverRanking(
     var driverId: Int,

@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.softmine.f1infoapi.databinding.ItemTeamRankingBinding
 import ru.softmine.f1infoapi.mvp.model.images.ImageLoader
 import ru.softmine.f1infoapi.mvp.presenter.interfaces.ListPresenter
-import ru.softmine.f1infoapi.mvp.view.TeamRankingItemView
+import ru.softmine.f1infoapi.mvp.view.teams.TeamRankingItemView
 import javax.inject.Inject
 
 class TeamRankingsAdapter(

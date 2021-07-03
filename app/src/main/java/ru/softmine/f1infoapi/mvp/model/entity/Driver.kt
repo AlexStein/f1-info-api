@@ -6,7 +6,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Driver(
-    @Expose val id: String,
+    @Expose val id: Int,
     @Expose val name: String,
     @Expose val image: String,
     @Expose val nationality: String,

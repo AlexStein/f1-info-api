@@ -5,7 +5,7 @@ import io.reactivex.rxjava3.core.Single
 import ru.softmine.f1infoapi.mvp.model.entity.Circuit
 import ru.softmine.f1infoapi.mvp.model.entity.room.RoomCircuit
 import ru.softmine.f1infoapi.mvp.model.entity.room.db.Database
-import ru.softmine.f1infoapi.mvp.model.repository.interfaces.CircuitsCache
+import ru.softmine.f1infoapi.mvp.model.repository.interfaces.cache.CircuitsCache
 
 class CircuitsCacheImpl(private val db: Database) : CircuitsCache {
 
